@@ -1,0 +1,31 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-3">Welcome to PassVault Dynamics</h2>
+
+    <p>This web application allows you to securely change your Active Directory password from anywhere, at any time. Below you'll find instructions on how to use the application.</p>
+
+    <div class="my-4">
+        <h3>How to Use</h3>
+        <ol class="list-group list-group-numbered">
+            <li class="list-group-item">Navigate to the <a href="/ChangePassword" class="link-primary">Change Password</a> page via the navigation menu or click <a href="/ChangePassword" class="link-primary">here</a> to go there now.</li>
+            <li class="list-group-item">Enter your current Active Directory username and password, along with your new password.</li>
+            <li class="list-group-item">Click <strong>Submit</strong> to change your password. You'll be redirected to a success page upon completion.</li>
+        </ol>
+    </div>
+
+    <div class="my-4">
+        <h3>Features</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Secure password change</li>
+            <li class="list-group-item">User-friendly interface</li>
+            <li class="list-group-item">24/7 access from any web-enabled device</li>
+        </ul>
+    </div>
+
+    <p>Thank you for using PassVault Dynamics.</p>
+</div>
