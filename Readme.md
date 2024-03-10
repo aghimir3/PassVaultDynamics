@@ -1,4 +1,3 @@
-
 # PassVault Dynamics
 
 ## About
@@ -27,11 +26,17 @@ To compile PassVault Dynamics, follow these steps:
    ```
    cd PassVaultDynamics
    ```
-3. Compile the project using the .NET CLI:
+3. Restore the required NuGet packages:
+   ```
+   dotnet restore
+   ```
+   This command downloads all the necessary NuGet packages as specified in the project file.
+
+4. Compile the project using the .NET CLI:
    ```
    dotnet build
    ```
-This will restore any NuGet packages required and build the project.
+   This will build the project, using the restored NuGet packages.
 
 ## Hosting on a Web Server
 ### Preparing for Deployment
@@ -51,7 +56,15 @@ This will restore any NuGet packages required and build the project.
 5. Set the necessary permissions for the application pool identity to interact with Active Directory.
 
 ### Configuring the Application
-1. Update the application's `appsettings.json` or environment variables to include any domain-specific configurations necessary for Active Directory integration. By default, there should be no need for this.
+1. Configure the `ShowLogo` setting in `appsettings.json` to control the visibility of your company logo in the application. Set `ShowLogo` to `true` and provide the `FilePath` under the `Logo` configuration to display the logo. For example:
+   ```json
+   {
+     "Logo": {
+       "ShowLogo": true,
+       "FilePath": "path/to/your/logo.png"
+     }
+   }
+   ```
 2. Ensure that the server's firewall and security settings allow the necessary traffic for users to access the application.
 
 ## Usage
