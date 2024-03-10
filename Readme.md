@@ -26,13 +26,8 @@ To compile PassVault Dynamics, follow these steps:
    ```
    cd PassVaultDynamics
    ```
-3. Restore the required NuGet packages:
-   ```
-   dotnet restore
-   ```
-   This command downloads all the necessary NuGet packages as specified in the project file.
 
-4. Compile the project using the .NET CLI:
+3. Compile the project using the .NET CLI:
    ```
    dotnet build
    ```
@@ -66,6 +61,15 @@ To compile PassVault Dynamics, follow these steps:
    }
    ```
 2. Ensure that the server's firewall and security settings allow the necessary traffic for users to access the application.
+
+### Using the GitHub Release to Host on IIS
+1. Download the latest release from the GitHub repository's Releases page.
+2. Extract the downloaded ZIP file to your desired location on the IIS server.
+3. In IIS Manager, create a new website or application pointing to the extracted application directory.
+4. Configure the application pool to use No Managed Code since Kestrel handles the runtime.
+5. Ensure the IIS server is properly joined to the domain to allow AD operations.
+6. Set the necessary permissions for the application pool identity to interact with Active Directory.
+7. Access the application through the configured URL on your web browser.
 
 ## Usage
 - Users navigate to the application using their web browser.
